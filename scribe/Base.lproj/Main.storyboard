@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,84 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="scribe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ux0-0h-Z4W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-Fs-uWU">
+                                        <rect key="frame" x="169" y="34.5" width="76" height="31"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85882352941176465" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6ez-Fs-uWU" firstAttribute="centerX" secondItem="ux0-0h-Z4W" secondAttribute="centerX" id="0ez-46-1yB"/>
+                                    <constraint firstItem="6ez-Fs-uWU" firstAttribute="centerY" secondItem="ux0-0h-Z4W" secondAttribute="centerY" id="6GT-9o-7Yn"/>
+                                    <constraint firstAttribute="height" constant="100" id="mJ2-hq-Iih"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY &amp; TRANSCRIBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-2R-gKy">
+                                <rect key="frame" x="100.5" y="845.5" width="213.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type button below to transcribe the audio embedded i the app" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-gA-xb7">
+                                <rect key="frame" x="20" y="108" width="374" height="659.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-XE-xTc">
+                                <rect key="frame" x="177" y="775.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="GI3-Z3-jlG"/>
+                                    <constraint firstAttribute="height" constant="60" id="n9f-7t-lYK"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW1-Gv-QoF" customClass="CircleButton" customModule="scribe" customModuleProvider="target">
+                                <rect key="frame" x="177" y="775.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ocg-Yz-UqM"/>
+                                    <constraint firstAttribute="width" constant="60" id="eqs-Bp-tDk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s5G-XE-xTc" firstAttribute="centerX" secondItem="rW1-Gv-QoF" secondAttribute="centerX" id="50E-eM-l9Z"/>
+                            <constraint firstItem="s5G-XE-xTc" firstAttribute="centerY" secondItem="rW1-Gv-QoF" secondAttribute="centerY" id="8dD-qL-BUN"/>
+                            <constraint firstItem="KyJ-gA-xb7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8pP-jg-eIs"/>
+                            <constraint firstItem="KyJ-gA-xb7" firstAttribute="top" secondItem="ux0-0h-Z4W" secondAttribute="bottom" constant="8" id="Aj9-ZL-4U7"/>
+                            <constraint firstItem="ux0-0h-Z4W" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Occ-OR-8sW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KyJ-gA-xb7" secondAttribute="trailing" constant="20" id="TvM-EM-d9K"/>
+                            <constraint firstAttribute="bottom" secondItem="aVU-2R-gKy" secondAttribute="bottom" constant="20" id="esY-hB-fMH"/>
+                            <constraint firstItem="ux0-0h-Z4W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hST-aL-dml"/>
+                            <constraint firstItem="ux0-0h-Z4W" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pht-aF-LF5"/>
+                            <constraint firstItem="aVU-2R-gKy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPn-cm-W1H"/>
+                            <constraint firstItem="aVU-2R-gKy" firstAttribute="top" secondItem="rW1-Gv-QoF" secondAttribute="bottom" constant="10" id="snE-ld-axK"/>
+                            <constraint firstItem="rW1-Gv-QoF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z6h-Jn-AT5"/>
+                            <constraint firstItem="rW1-Gv-QoF" firstAttribute="top" secondItem="KyJ-gA-xb7" secondAttribute="bottom" constant="8" id="zil-zH-VFq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
