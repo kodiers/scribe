@@ -45,13 +45,6 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-XE-xTc">
-                                <rect key="frame" x="177" y="775.5" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="GI3-Z3-jlG"/>
-                                    <constraint firstAttribute="height" constant="60" id="n9f-7t-lYK"/>
-                                </constraints>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW1-Gv-QoF" customClass="CircleButton" customModule="scribe" customModuleProvider="target">
                                 <rect key="frame" x="177" y="775.5" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,7 +57,17 @@
                                         <real key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JaP-j7-NZW"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-XE-xTc">
+                                <rect key="frame" x="177" y="775.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="GI3-Z3-jlG"/>
+                                    <constraint firstAttribute="height" constant="60" id="n9f-7t-lYK"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -84,6 +87,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activitySpinner" destination="s5G-XE-xTc" id="odo-VV-IRB"/>
+                        <outlet property="transcriptionTextField" destination="KyJ-gA-xb7" id="Xb2-mY-Izh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
